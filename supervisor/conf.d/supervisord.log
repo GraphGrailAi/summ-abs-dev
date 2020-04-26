@@ -1,0 +1,160 @@
+2019-12-25 12:39:51,511 CRIT Supervisor running as root (no user in config file)
+2019-12-25 12:39:51,512 WARN No file matches via include "/etc/supervisor/conf.d/*.conf"
+2019-12-25 12:39:51,524 INFO RPC interface 'supervisor' initialized
+2019-12-25 12:39:51,525 CRIT Server 'unix_http_server' running without any HTTP authentication checking
+2019-12-25 12:39:51,526 INFO supervisord started with pid 14631
+2019-12-25 12:40:25,621 CRIT Supervisor running as root (no user in config file)
+2019-12-25 12:40:25,621 WARN No file matches via include "/etc/supervisor/conf.d/*.conf"
+2019-12-25 12:40:25,628 INFO RPC interface 'supervisor' initialized
+2019-12-25 12:40:25,628 CRIT Server 'unix_http_server' running without any HTTP authentication checking
+2019-12-25 12:40:25,628 INFO supervisord started with pid 14812
+2019-12-25 14:50:01,484 CRIT Supervisor running as root (no user in config file)
+2019-12-25 14:50:01,484 INFO Included extra file "/etc/supervisor/conf.d/supervisord_ze.conf" during parsing
+2019-12-25 14:50:01,492 INFO RPC interface 'supervisor' initialized
+2019-12-25 14:50:01,492 CRIT Server 'unix_http_server' running without any HTTP authentication checking
+2019-12-25 14:50:01,492 INFO supervisord started with pid 16432
+2019-12-25 14:50:02,495 INFO spawned: 'ze' with pid 16452
+2019-12-25 14:50:03,497 INFO success: ze entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-12-25 14:50:08,293 INFO exited: ze (exit status 1; not expected)
+2019-12-25 14:50:08,295 INFO spawned: 'ze' with pid 16458
+2019-12-25 14:50:09,297 INFO success: ze entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-12-25 14:50:11,691 INFO exited: ze (exit status 1; not expected)
+2019-12-25 14:50:11,692 INFO spawned: 'ze' with pid 16464
+2019-12-25 14:50:12,701 INFO success: ze entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-12-25 14:50:15,081 INFO exited: ze (exit status 1; not expected)
+2019-12-25 14:50:15,084 INFO spawned: 'ze' with pid 16470
+2019-12-25 14:50:16,085 INFO success: ze entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-12-25 14:50:18,513 INFO exited: ze (exit status 1; not expected)
+2019-12-25 14:50:18,514 INFO spawned: 'ze' with pid 16476
+2019-12-25 14:50:19,516 INFO success: ze entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-12-25 14:50:22,078 INFO exited: ze (exit status 1; not expected)
+2019-12-25 14:50:22,081 INFO spawned: 'ze' with pid 16483
+2019-12-25 14:50:23,084 INFO success: ze entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-12-25 14:50:25,608 INFO exited: ze (exit status 1; not expected)
+2019-12-25 14:50:25,610 INFO spawned: 'ze' with pid 16489
+2019-12-25 14:50:26,612 INFO success: ze entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-12-25 14:50:28,870 INFO exited: ze (exit status 1; not expected)
+2019-12-25 14:50:28,872 INFO spawned: 'ze' with pid 16495
+2019-12-25 14:50:29,873 INFO success: ze entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-12-25 14:50:32,123 INFO exited: ze (exit status 1; not expected)
+2019-12-25 14:50:32,125 INFO spawned: 'ze' with pid 16501
+2019-12-25 14:50:33,127 INFO success: ze entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-12-25 14:50:35,586 INFO exited: ze (exit status 1; not expected)
+2019-12-25 14:50:35,589 INFO spawned: 'ze' with pid 16507
+2019-12-25 14:50:36,591 INFO success: ze entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-12-25 14:50:39,050 INFO exited: ze (exit status 1; not expected)
+2019-12-25 14:50:39,052 INFO spawned: 'ze' with pid 16513
+2019-12-25 14:50:40,054 INFO success: ze entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-12-25 14:50:42,473 INFO exited: ze (exit status 1; not expected)
+2019-12-25 14:50:42,475 INFO spawned: 'ze' with pid 16521
+2019-12-25 14:50:43,477 INFO success: ze entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-12-25 14:50:45,849 INFO exited: ze (exit status 1; not expected)
+2019-12-25 14:50:45,851 INFO spawned: 'ze' with pid 16529
+2019-12-25 14:50:46,853 INFO success: ze entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-12-25 14:50:49,060 INFO exited: ze (exit status 1; not expected)
+2019-12-25 14:50:49,062 INFO spawned: 'ze' with pid 16535
+2019-12-25 14:50:50,064 INFO success: ze entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-12-25 14:50:52,249 INFO exited: ze (exit status 1; not expected)
+2019-12-25 14:50:52,251 INFO spawned: 'ze' with pid 16541
+2019-12-25 14:50:53,253 INFO success: ze entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-12-25 14:50:55,431 INFO exited: ze (exit status 1; not expected)
+2019-12-25 14:50:55,433 INFO spawned: 'ze' with pid 16547
+2019-12-25 14:50:56,435 INFO success: ze entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-12-25 14:50:58,653 INFO exited: ze (exit status 1; not expected)
+2019-12-25 14:50:58,655 INFO spawned: 'ze' with pid 16553
+2019-12-25 14:50:59,656 INFO success: ze entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-12-25 14:51:02,012 INFO exited: ze (exit status 1; not expected)
+2019-12-25 14:51:02,015 INFO spawned: 'ze' with pid 16559
+2019-12-25 14:51:03,016 INFO success: ze entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-12-25 14:51:05,357 INFO exited: ze (exit status 1; not expected)
+2019-12-25 14:51:05,358 INFO spawned: 'ze' with pid 16565
+2019-12-25 14:51:06,360 INFO success: ze entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-12-25 14:51:08,486 INFO exited: ze (exit status 1; not expected)
+2019-12-25 14:51:08,487 INFO spawned: 'ze' with pid 16572
+2019-12-25 14:51:09,489 INFO success: ze entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-12-25 14:51:11,810 INFO exited: ze (exit status 1; not expected)
+2019-12-25 14:51:11,812 INFO spawned: 'ze' with pid 16578
+2019-12-25 14:51:12,814 INFO success: ze entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-12-25 14:51:15,059 INFO exited: ze (exit status 1; not expected)
+2019-12-25 14:51:15,062 INFO spawned: 'ze' with pid 16584
+2019-12-25 14:51:16,849 INFO success: ze entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-12-25 14:51:18,482 INFO exited: ze (exit status 1; not expected)
+2019-12-25 14:51:18,485 INFO spawned: 'ze' with pid 16590
+2019-12-25 14:51:19,487 INFO success: ze entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-12-25 14:51:21,658 INFO exited: ze (exit status 1; not expected)
+2019-12-25 14:51:21,659 INFO spawned: 'ze' with pid 16596
+2019-12-25 14:51:22,661 INFO success: ze entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-12-25 14:51:25,147 INFO exited: ze (exit status 1; not expected)
+2019-12-25 14:51:25,148 INFO spawned: 'ze' with pid 16602
+2019-12-25 14:51:26,150 INFO success: ze entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-12-25 14:51:28,430 INFO exited: ze (exit status 1; not expected)
+2019-12-25 14:51:28,432 INFO spawned: 'ze' with pid 16608
+2019-12-25 14:51:29,433 INFO success: ze entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-12-25 14:51:31,878 INFO exited: ze (exit status 1; not expected)
+2019-12-25 14:51:31,880 INFO spawned: 'ze' with pid 16614
+2019-12-25 14:51:32,885 INFO success: ze entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-12-25 14:51:35,055 INFO exited: ze (exit status 1; not expected)
+2019-12-25 14:51:35,057 INFO spawned: 'ze' with pid 16620
+2019-12-25 14:51:36,059 INFO success: ze entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-12-25 14:51:38,244 INFO exited: ze (exit status 1; not expected)
+2019-12-25 14:51:38,246 INFO spawned: 'ze' with pid 16626
+2019-12-25 14:51:39,252 INFO success: ze entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-12-25 14:51:41,563 INFO exited: ze (exit status 1; not expected)
+2019-12-25 14:51:41,568 INFO spawned: 'ze' with pid 16632
+2019-12-25 14:51:42,570 INFO success: ze entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-12-25 14:51:44,905 INFO exited: ze (exit status 1; not expected)
+2019-12-25 14:51:44,908 INFO spawned: 'ze' with pid 16638
+2019-12-25 14:51:45,910 INFO success: ze entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-12-25 14:51:48,540 INFO exited: ze (exit status 1; not expected)
+2019-12-25 14:51:48,542 INFO spawned: 'ze' with pid 16644
+2019-12-25 14:51:49,544 INFO success: ze entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-12-25 14:51:51,984 INFO exited: ze (exit status 1; not expected)
+2019-12-25 14:51:51,987 INFO spawned: 'ze' with pid 16652
+2019-12-25 14:51:52,989 INFO success: ze entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-12-25 14:51:55,711 INFO exited: ze (exit status 1; not expected)
+2019-12-25 14:51:55,716 INFO spawned: 'ze' with pid 16660
+2019-12-25 14:51:56,717 INFO success: ze entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-12-25 14:51:59,341 INFO exited: ze (exit status 1; not expected)
+2019-12-25 14:51:59,351 INFO spawned: 'ze' with pid 16666
+2019-12-25 14:52:00,355 INFO success: ze entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-12-25 14:52:03,064 INFO exited: ze (exit status 1; not expected)
+2019-12-25 14:52:03,069 INFO spawned: 'ze' with pid 16672
+2019-12-25 14:52:04,071 INFO success: ze entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-12-25 14:52:06,667 INFO exited: ze (exit status 1; not expected)
+2019-12-25 14:52:06,671 INFO spawned: 'ze' with pid 16678
+2019-12-25 14:52:07,675 INFO success: ze entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-12-25 14:52:10,278 INFO exited: ze (exit status 1; not expected)
+2019-12-25 14:52:10,280 INFO spawned: 'ze' with pid 16684
+2019-12-25 14:52:11,283 INFO success: ze entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-12-25 14:52:13,670 INFO exited: ze (exit status 1; not expected)
+2019-12-25 14:52:13,672 INFO spawned: 'ze' with pid 16690
+2019-12-25 14:52:14,674 INFO success: ze entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-12-25 14:52:16,962 INFO exited: ze (exit status 1; not expected)
+2019-12-25 14:52:16,964 INFO spawned: 'ze' with pid 16696
+2019-12-25 14:52:17,965 INFO success: ze entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-12-25 14:52:20,249 INFO exited: ze (exit status 1; not expected)
+2019-12-25 14:52:20,251 INFO spawned: 'ze' with pid 16702
+2019-12-25 14:52:21,253 INFO success: ze entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-12-25 14:52:23,485 INFO exited: ze (exit status 1; not expected)
+2019-12-25 14:52:23,488 INFO spawned: 'ze' with pid 16710
+2019-12-25 14:52:24,489 INFO success: ze entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-12-25 14:52:26,716 INFO exited: ze (exit status 1; not expected)
+2019-12-25 14:52:26,719 INFO spawned: 'ze' with pid 16716
+2019-12-25 14:52:27,721 INFO success: ze entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-12-25 14:52:30,196 INFO exited: ze (exit status 1; not expected)
+2019-12-25 14:52:30,198 INFO spawned: 'ze' with pid 16722
+2019-12-25 14:52:31,200 INFO success: ze entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-12-25 14:52:33,595 INFO exited: ze (exit status 1; not expected)
+2019-12-25 14:52:33,596 INFO spawned: 'ze' with pid 16728
+2019-12-25 14:52:34,599 INFO success: ze entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-12-25 14:52:37,141 INFO exited: ze (exit status 1; not expected)
+2019-12-25 14:52:37,143 INFO spawned: 'ze' with pid 16734
+2019-12-25 14:52:38,145 INFO success: ze entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-12-25 14:52:40,606 INFO exited: ze (exit status 1; not expected)
+2019-12-25 14:52:40,609 INFO spawned: 'ze' with pid 16740
+2019-12-25 14:52:41,611 INFO success: ze entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-12-25 14:52:44,354 INFO exited: ze (exit status 1; not expected)
+2019-12-25 14:52:44,357 INFO spawned: 'ze' with pid 16746
+2019-12-25 14:52:45,359 INFO success: ze entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-12-25 14:52:45,749 INFO waiting for ze to stop
+2019-12-25 14:52:45,755 INFO stopped: ze (terminated by SIGTERM)
