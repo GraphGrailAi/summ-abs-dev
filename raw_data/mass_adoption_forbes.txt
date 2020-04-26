@@ -1,0 +1,39 @@
+A significant number of executives from 151 financial institutions in 33 countries say that within the next two years they expect to become mass adopters of AI and expect AI to become an essential business driver across the financial industry. This information was collected as part of a survey on AI in Financial Services conducted by the World Economic Forum in collaboration with the Cambridge Centre for Alternative Finance at the University of Cambridge Judge Business School and supported by EY and Invesco. The objective of the study was to understand the opportunities and challenges that will result from mass adoption of AI in Financial Services. The research was published in a 127-page report entitled Transforming Paradigms A Global AI in Financial Services Survey.
+Financial Services Financial Services sectors represented in the survey sample. Transforming Paradigms – A Global AI in Financial Services Survey
+Highlights from the Survey
+    China, US, and UK are the top three countries represented in the survey.
+    85% are currently using some form of AI.
+    77% anticipate that AI will have high/very high importance to their businesses within two years.
+    64% expect to become mass adopters of AI within two years.
+    52% are currently implementing AI-enabled products and processes.
+    50% expect a big competitive threat from tech companies leveraging AI to enter the financial services sector.
+    23% of respondents are at the forefront of AI implementation.
+    16% of respondents are lagging behind in AI implementation.
+Today In: Innovation
+AI Perceived strategic importance of AI over time. Transforming Paradigms A Global AI in Financial Services Survey.
+Insights from the Survey
+    AI is changing how financial institutions generate and utilize insights from data.
+    New AI-enabled business models focus on creating a reimagined customer experience.
+    AI can help personalize investments based on individual goals.
+    AI is driving business model innovation and creating opportunities for new revenue streams. 
+    AI is expected to reward early movers with the potential to establish barriers to entry and increase the likelihood of a winner-takes-all scenario.  
+    At the end of the survey, respondents were given an opportunity to share their comments about AI-related areas which they believe their senior management should to understand more deeply. The subject mentioned the most  – especially by banks – was uncertainty about the value proposition of AI in financial services.
+    Respondents see a need to identify AI-driven business cases with attractive ROI to improve management's understanding of the tangible benefits of AI in financial services.
+AI R&D expenditure spent on AI. Transforming Paradigms – A Global AI in Financial Services Survey 2020
+My comments about the Survey
+The report addressed the widening technological gap between high and low spenders as high spenders increase funding for AI R&D. Researchers speculated that AI supremacy might be determined between high-spenders vs. low-spenders rather than incumbents vs. disruptors. That may prove to be true, but consider that in the last 10 years investment in the FinTech industry exceeded $350 billion dollars. During the same period, a similar amount of funding was invested in other industries such as AI, healthcare, and aerospace. There have been a number of important breakthroughs in these other areas but not in FinTech. So far, the money invested in FinTech has not yielded significant results compared to other domains. FinTech received more investment but accomplished less with it. 
+Long term AI supremacy in financial services is likely to result from a combination of factors including funding, technical prowess, domain expertise, and AI friendly senior management driving AI strategy. The companies most likely to achieve AI supremacy will be the ones capable of attracting interdisciplinary teams with deep experience in both AI and financial services who can design, build, and implement AI-powered novel FinTech solutions. Companies with AI-friendly executives will demonstrate how the effective use of AI can increase company valuation and their presence could be an indication that a company is more likely to succeed.
+Development teams with experience using AI will understand AI’s potential and its limitations. Teams with domain specific knowledge in financial services will understand the real-world processes that they are modeling and thus will develop superior products. Companies that achieve AI leadership in FinTech will be the ones that assemble experienced teams with deep expertise in both AI and financial services. 
+AI FinTech, AI, and data-driven technologies will converge into a single advanced technology Aging Analytics Agency
+Convergence
+In the near future, FinTech, AI, and data-driven technologies will converge into a single advanced technology. Next-generation financial companies will use engineering methods with integrated systems to treat business, finance, and technology as a single unit with complementary parts. The resulting FinTech 2.0 will offer unprecedented potential for growth and disruption. The 7 components of FinTech 2.0 are:
+    FinTech
+    RegTech
+    LegalTech
+    MarTech
+    InvestTech
+    InsurTech
+    HealthTech
+In the HealthTech space, the application of data science and AI has already enabled P4 Medicine (personalized, predictive, precision, participatory). The integration of data science, AI, and FinTech will result in P4 FinTech (personalized, predictive, precision, participatory). AI will enable personalized financial products optimized for individuals. Several cycles of feedback between the user and the AI system will deliver products specifically tuned to each individual. This level of AI enabled personalization is already standard in progressive medical clinics and soon will be incorporated in progressive FinTech companies. Companies using AI enabled FinTech 2.0 will surpass low tech FinTech companies and financial institutions using outdated technologies.
+Longevity Banks will offer financial inclusion
+There has never been a bank that focused on developing financial services optimized for people over 60. The AI-enabled Longevity Economy presents an opportunity for the financial industry to provide financial inclusion to people over 60, many of whom have been excluded in the past. With FinTech 2.0, financial institutions will be able to serve this untapped multi trillion dollar market comprised of 1 billion people over 60 who make up the wealthiest part of the financial system. The global spending power of this demographic is $15 trillion per year, and is expected to grow to $27 trillion by 2026. Advanced FinTech is already emerging in London and AI tools for FinTech 2.0 are already in development there. AI-powered Longevity Banks will provide services to help people 60+ optimize their wealthspan. Clients of Longevity Banks will have more time to accumulate wealth, will have a longer investment horizon, and will benefit from compounding. These age friendly banks will utilize AI to develop and deploy fully integrated AgeTech-WealthTech solutions to grow their client’s healthspan and wealthspan simultaneously in a coordinated way. FinTech innovators will use AI to provide personalized financial products that provide a comprehensive view of investments, taxes, insurance, and regulation without unneeded complexity. AI will make it possible for people to enjoy a high quality life in their golden years. The complete report is available here: Transforming Paradigms A Global AI in Financial Services Survey. Margaretta Colangelo is co-founder of Longevity Bank which is expected to launch in Switzerland later this year. Follow me on Twitter or LinkedIn. Check out my website or some of my other work here. 

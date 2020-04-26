@@ -1,0 +1,14 @@
+﻿Reuters Becomes The First News Agency to Use AI For Sport Video Reports
+Reuters News Agency, in cooperation with AI company Synthesia, has launched the “world’s first automated presenter-led video sport report”, reads company press release from February 7.
+
+Reuters and Synthesia have created a “virtual” presenter based on actual human presenter, using AI technology. Artificial sports commentator delivers match summaries, “without any human scripting, editing or production”, explains the press release.
+
+According to Nick Cohen, global head of product, core news services at Reuters, this project, being just a prototype, paths the way for further research on implementing AI in journalism: 
+
+“This kind of prototyping is helping us to understand how AI and synthetic media can be combined with our real-time feeds of photography and reporting to create whole new kinds of products and services”
+
+Synthesia’s CEO and co-founder Victor Riparbelli shares the view that AI technologies are the future in the industry:
+
+“AI-generated content will be a cornerstone of the media landscape in the coming decade and we are pleased to be at the forefront of developing new products and experience alongside industry leaders such as Reuters”
+
+Future Time is not behind the global trend. Future Time’s AI contributor Marat 3.0 is expected to deliver his first article on technology and art already this week. Stay tuned!

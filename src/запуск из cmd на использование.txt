@@ -1,0 +1,57 @@
+ext:
+
+запуск на gpu
+python train.py -task ext -mode test_text -text_src '../raw_data/us_battlefield_thenextweb.txt' -bert_data_path '../bert_data/' -ext_dropout 0.1 -model_path '../models/bertext_cnndm_transformer.pt' -test_from '../models/bertext_cnndm_transformer.pt' -lr 2e-3 -visible_gpus 0,1,2 -report_every 50 -save_checkpoint_steps 1000 -batch_size 3000 -train_steps 50000 -accum_count 2 -log_file ../logs/ext_bert_cnndm -use_interval true -warmup_steps 10000 -max_pos 512
+
+
+запуск на cpu: -visible_gpus -1
+python train.py -task ext -mode test_text -text_src '../raw_data/us_battlefield_thenextweb.txt' -bert_data_path '../bert_data/' -ext_dropout 0.1 -model_path '../models/' -test_from '../models/bertext_cnndm_transformer.pt' -lr 2e-3 -visible_gpus -1 -report_every 50 -save_checkpoint_steps 1000 -batch_size 3000 -train_steps 50000 -accum_count 2 -log_file ../logs/ext_bert_cnndm -use_interval true -warmup_steps 10000 -max_pos 512
+
+
+запуск на cpu с данными по умолчанию в репозитории: -visible_gpus -1    temp_ext.raw_src
+python train.py -task ext -mode test_text -text_src '../raw_data/temp_ext.raw_src' -bert_data_path '../bert_data/' -ext_dropout 0.1 -model_path '../models/' -test_from '../models/bertext_cnndm_transformer.pt' -lr 2e-3 -visible_gpus -1 -report_every 50 -save_checkpoint_steps 1000 -batch_size 3000 -train_steps 50000 -accum_count 2 -log_file ../logs/ext_bert_cnndm -use_interval true -warmup_steps 10000 -max_pos 512
+
+abs
+python train.py -task ads -mode test_text -text_src '../raw_data/temp_ext.raw_src' -bert_data_path '../bert_data/' -ext_dropout 0.1 -model_path '../models/' -test_from '../models/bertext_cnndm_transformer.pt' -lr 2e-3 -visible_gpus -1 -report_every 50 -save_checkpoint_steps 1000 -batch_size 3000 -train_steps 50000 -accum_count 2 -log_file ../logs/ext_bert_cnndm -use_interval true -warmup_steps 10000 -max_pos 512
+
+
+abs:
+
+запуск на cpu: -visible_gpus -1
+python train.py -task abs -mode test_text -text_src '../raw_data/us_battlefield_thenextweb.txt' -bert_data_path '../bert_data/' -ext_dropout 0.1 -model_path '../models/' -test_from '../models/model_step_148000.pt' -lr 2e-3 -visible_gpus -1 -report_every 50 -save_checkpoint_steps 1000 -batch_size 140 -train_steps 50000 -accum_count 2 -log_file ../logs/abs_bert -use_interval true -warmup_steps 10000 -max_pos 512 -max_length 400 -alpha 0.95 -min_length 200 -result_path '../results/cnndm' -test_all True
+
+
+тренировка gpu BertExtAbs
+python train.py  -task abs -mode train -bert_data_path '../bert_data/' -dec_dropout 0.2  -model_path '../models/' -sep_optim true -lr_bert 0.002 -lr_dec 0.2 -save_checkpoint_steps 2000 -batch_size 140 -train_steps 200000 -report_every 50 -accum_count 5 -use_bert_emb true -use_interval true -warmup_steps_bert 20000 -warmup_steps_dec 10000 -max_pos 512 -visible_gpus 0,1,2,3 -log_file ../logs/abs_bert_cnndm  -load_from_extractive '../models/model_step_148000.pt' -text_src '../raw_data/temp_my.raw_src'
+
+cpu  -visible_gpus -1
+python train.py  -task abs -mode train -bert_data_path '../bert_data/cnndm' -dec_dropout 0.2  -model_path '../models/' -sep_optim true -lr_bert 0.002 -lr_dec 0.2 -save_checkpoint_steps 2000 -batch_size 140 -train_steps 200000 -report_every 50 -accum_count 5 -use_bert_emb true -use_interval true -warmup_steps_bert 20000 -warmup_steps_dec 10000 -max_pos 512 -visible_gpus -1 -log_file ../logs/abs_bert_cnndm  -load_from_extractive '../models/model_step_148000.pt' -text_src '../raw_data/temp_my.raw_src' -train_from '../models/model_step_148000.pt'
+
+
+
+
+gpu (внимание сохраняет чекпоинты каждые 2000 шагов, они весят по 2.2 гб)
+python train.py  -task abs -mode train -bert_data_path '../bert_data/cnndm' -dec_dropout 0.2  -model_path '../models/' -sep_optim true -lr_bert 0.002 -lr_dec 0.2 -save_checkpoint_steps 2000 -batch_size 10 -train_steps 200000 -report_every 50 -accum_count 5 -use_bert_emb true -use_interval true -warmup_steps_bert 20000 -warmup_steps_dec 10000 -max_pos 512 -visible_gpus 0 -log_file ../logs/abs_bert_cnndm  -load_from_extractive '../models/model_step_148000.pt' -text_src '../raw_data/temp_my.raw_src' -train_from '../models/model_step_148000.pt'
+
+запуск на gpu: новая уже моя дообученная модель model_step_154000.pt
+python train.py -task abs -mode test_text -text_src '../raw_data/us_battlefield_thenextweb.txt' -bert_data_path '../bert_data/' -ext_dropout 0.1 -model_path '../models/' -test_from '../models/model_step_154000.pt' -lr 2e-3 -visible_gpus -1 -report_every 50 -save_checkpoint_steps 1000 -batch_size 140 -train_steps 50000 -accum_count 2 -log_file ../logs/abs_bert -use_interval true -warmup_steps 10000 -max_pos 512 -max_length 400 -alpha 0.95 -min_length 200 -result_path '../results/cnndm' -test_all True
+
+
+новый файл и уменьшенный размер саммари тк система сама делает сплит по новым линиям n_lines = len(open(source_fp).read().split('\n'))
+
+python train.py -task abs -mode test_text -text_src '../raw_data/naked_photos_petapixel.txt' -bert_data_path '../bert_data/' -ext_dropout 0.1 -model_path '../models/' -test_from '../models/model_step_154000.pt' -lr 2e-3 -visible_gpus -1 -report_every 50 -save_checkpoint_steps 1000 -batch_size 140 -train_steps 50000 -accum_count 2 -log_file ../logs/abs_bert -use_interval true -warmup_steps 10000 -max_pos 512 -max_length 200 -alpha 0.95 -min_length 50 -result_path '../results/cnndm' -test_all True
+
+python train.py -task abs -mode test_text -text_src '../raw_data/mass_adoption_forbes.txt' -bert_data_path '../bert_data/' -ext_dropout 0.1 -model_path '../models/' -test_from '../models/model_step_154000.pt' -lr 2e-3 -visible_gpus -1 -report_every 50 -save_checkpoint_steps 1000 -batch_size 140 -train_steps 50000 -accum_count 2 -log_file ../logs/abs_bert -use_interval true -warmup_steps 10000 -max_pos 512 -max_length 200 -alpha 0.95 -min_length 20 -result_path '../results/cnndm' -test_all True
+
+python train.py -task abs -mode test_text -text_src '../raw_data/robot_ancient_leeds.txt' -bert_data_path '../bert_data/' -ext_dropout 0.1 -model_path '../models/' -test_from '../models/model_step_154000.pt' -lr 2e-3 -visible_gpus -1 -report_every 50 -save_checkpoint_steps 1000 -batch_size 140 -train_steps 50000 -accum_count 2 -log_file ../logs/abs_bert -use_interval true -warmup_steps 10000 -max_pos 512 -max_length 200 -alpha 0.95 -min_length 20 -result_path '../results/cnndm' -test_all True
+
+python train.py -task abs -mode test_text -text_src '../raw_data/players_bln_gamer.txt' -bert_data_path '../bert_data/' -ext_dropout 0.1 -model_path '../models/' -test_from '../models/model_step_154000.pt' -lr 2e-3 -visible_gpus -1 -report_every 50 -save_checkpoint_steps 1000 -batch_size 140 -train_steps 50000 -accum_count 2 -log_file ../logs/abs_bert -use_interval true -warmup_steps 10000 -max_pos 512 -max_length 200 -alpha 0.95 -min_length 20 -result_path '../results/cnndm' -test_all True
+
+python train.py -task abs -mode test_text -text_src '../raw_data/french_techcrunch.txt' -bert_data_path '../bert_data/' -ext_dropout 0.1 -model_path '../models/' -test_from '../models/model_step_154000.pt' -lr 2e-3 -visible_gpus -1 -report_every 50 -save_checkpoint_steps 1000 -batch_size 140 -train_steps 50000 -accum_count 2 -log_file ../logs/abs_bert -use_interval true -warmup_steps 10000 -max_pos 512 -max_length 200 -alpha 0.95 -min_length 20 -result_path '../results/cnndm' -test_all True
+
+
+
+
+python train.py -task abs -mode test_text -text_src '../raw_data/temp_ext.raw_src' -bert_data_path '../bert_data/' -ext_dropout 0.1 -model_path '../models/' -test_from '../models/model_step_154000.pt' -lr 2e-3 -visible_gpus -1 -report_every 50 -save_checkpoint_steps 1000 -batch_size 140 -train_steps 50000 -accum_count 2 -log_file ../logs/abs_bert -use_interval true -warmup_steps 10000 -max_pos 512 -max_length 200 -alpha 0.95 -min_length 20 -result_path '../results/cnndm' -test_all True
+
+
