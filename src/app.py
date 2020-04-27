@@ -408,9 +408,9 @@ def predict():
 
         args2 = Map(args)
 
-        logging.basicConfig(level=logging.INFO)
-        logger = logging.getLogger(__file__)
-        logger.info(pformat(args))
+        # logging.basicConfig(level=logging.INFO)
+        # logger = logging.getLogger(__file__)
+        # logger.info(pformat(args))
 
         if args['model_checkpoint'] == "":
             if args['model'] == 'gpt2':
@@ -475,9 +475,9 @@ def predict():
 
         args2 = Map(args)
 
-        logging.basicConfig(level=logging.INFO)
-        logger = logging.getLogger(__file__)
-        logger.info(pformat(args))
+        # logging.basicConfig(level=logging.INFO)
+        # logger = logging.getLogger(__file__)
+        # logger.info(pformat(args))
 
         if args['model_checkpoint'] == "":
             if args['model'] == 'gpt2':
