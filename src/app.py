@@ -38,7 +38,7 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
 socketio = SocketIO(app)
 
-
+import logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__file__)
 # logger.info(pformat(args))
