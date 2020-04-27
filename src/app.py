@@ -5,6 +5,11 @@
 """
 from __future__ import division
 
+import os
+import sys
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, os.path.abspath(os.path.join(PROJECT_ROOT, "..")))
+
 import argparse
 import glob
 import os
@@ -537,89 +542,106 @@ def get_summary():
         # некоторые аргс изменены в соответствии с парамтерами запуска на инференс:
         # python train.py -task abs -mode test_text -text_src '../raw_data/naked_photos_petapixel.txt' -bert_data_path '../bert_data/' -ext_dropout 0.1 -model_path '../models/' -test_from '../models/model_step_154000.pt' -lr 2e-3 -visible_gpus -1 -report_every 50 -save_checkpoint_steps 1000 -batch_size 140 -train_steps 50000 -accum_count 2 -log_file ../logs/abs_bert -use_interval true -warmup_steps 10000 -max_pos 512 -max_length 200 -alpha 0.95 -min_length 50 -result_path '../results/cnndm' -test_all True
         #############
-        parser = argparse.ArgumentParser()
-        parser.add_argument("-task", default='abs', type=str, choices=['ext', 'abs'])
-        parser.add_argument("-encoder", default='bert', type=str, choices=['bert', 'baseline'])
-        parser.add_argument("-mode", default='test_text', type=str, choices=['train', 'validate', 'test', 'test_text'])
-        parser.add_argument("-bert_data_path", default='../bert_data/')
-        parser.add_argument("-model_path", default='../models/')
-        parser.add_argument("-result_path", default='../results/cnndm')
-        parser.add_argument("-temp_dir", default='../temp')
-        parser.add_argument("-text_src", default='../raw_data/raw_text.txt')
-        parser.add_argument("-text_tgt", default='')
+        # parser = argparse.ArgumentParser()
+        # parser.add_argument("-task", default='abs', type=str, choices=['ext', 'abs'])
+        # parser.add_argument("-encoder", default='bert', type=str, choices=['bert', 'baseline'])
+        # parser.add_argument("-mode", default='test_text', type=str, choices=['train', 'validate', 'test', 'test_text'])
+        # parser.add_argument("-bert_data_path", default='../bert_data/')
+        # parser.add_argument("-model_path", default='../models/')
+        # parser.add_argument("-result_path", default='../results/cnndm')
+        # parser.add_argument("-temp_dir", default='../temp')
+        # parser.add_argument("-text_src", default='../raw_data/raw_text.txt')
+        # parser.add_argument("-text_tgt", default='')
+        #
+        # parser.add_argument("-batch_size", default=140, type=int)
+        # parser.add_argument("-test_batch_size", default=200, type=int)
+        # parser.add_argument("-max_ndocs_in_batch", default=6, type=int)
+        #
+        # parser.add_argument("-max_pos", default=512, type=int)
+        # parser.add_argument("-use_interval", type=str2bool, nargs='?', const=True, default=True)
+        # parser.add_argument("-large", type=str2bool, nargs='?', const=True, default=False)
+        # parser.add_argument("-load_from_extractive", default='', type=str)
+        #
+        # parser.add_argument("-sep_optim", type=str2bool, nargs='?', const=True, default=False)
+        # parser.add_argument("-lr_bert", default=2e-3, type=float)
+        # parser.add_argument("-lr_dec", default=2e-3, type=float)
+        # parser.add_argument("-use_bert_emb", type=str2bool, nargs='?', const=True, default=False)
+        #
+        # parser.add_argument("-share_emb", type=str2bool, nargs='?', const=True, default=False)
+        # parser.add_argument("-finetune_bert", type=str2bool, nargs='?', const=True, default=True)
+        # parser.add_argument("-dec_dropout", default=0.2, type=float)
+        # parser.add_argument("-dec_layers", default=6, type=int)
+        # parser.add_argument("-dec_hidden_size", default=768, type=int)
+        # parser.add_argument("-dec_heads", default=8, type=int)
+        # parser.add_argument("-dec_ff_size", default=2048, type=int)
+        # parser.add_argument("-enc_hidden_size", default=512, type=int)
+        # parser.add_argument("-enc_ff_size", default=512, type=int)
+        # parser.add_argument("-enc_dropout", default=0.2, type=float)
+        # parser.add_argument("-enc_layers", default=6, type=int)
+        #
+        # # params for EXT
+        # parser.add_argument("-ext_dropout", default=0.1, type=float)
+        # parser.add_argument("-ext_layers", default=2, type=int)
+        # parser.add_argument("-ext_hidden_size", default=768, type=int)
+        # parser.add_argument("-ext_heads", default=8, type=int)
+        # parser.add_argument("-ext_ff_size", default=2048, type=int)
+        #
+        # parser.add_argument("-label_smoothing", default=0.1, type=float)
+        # parser.add_argument("-generator_shard_size", default=32, type=int)
+        # parser.add_argument("-alpha", default=0.6, type=float)
+        # parser.add_argument("-beam_size", default=5, type=int)
+        # parser.add_argument("-min_length", default=40, type=int)
+        # parser.add_argument("-max_length", default=200, type=int)
+        # parser.add_argument("-max_tgt_len", default=140, type=int)
+        #
+        # parser.add_argument("-param_init", default=0, type=float)
+        # parser.add_argument("-param_init_glorot", type=str2bool, nargs='?', const=True, default=True)
+        # parser.add_argument("-optim", default='adam', type=str)
+        # parser.add_argument("-lr", default=1, type=float)
+        # parser.add_argument("-beta1", default=0.9, type=float)
+        # parser.add_argument("-beta2", default=0.999, type=float)
+        # parser.add_argument("-warmup_steps", default=8000, type=int)
+        # parser.add_argument("-warmup_steps_bert", default=8000, type=int)
+        # parser.add_argument("-warmup_steps_dec", default=8000, type=int)
+        # parser.add_argument("-max_grad_norm", default=0, type=float)
+        #
+        # parser.add_argument("-save_checkpoint_steps", default=5, type=int)
+        # parser.add_argument("-accum_count", default=1, type=int)
+        # parser.add_argument("-report_every", default=1, type=int)
+        # parser.add_argument("-train_steps", default=1000, type=int)
+        # parser.add_argument("-recall_eval", type=str2bool, nargs='?', const=True, default=False)
+        #
+        # parser.add_argument('-visible_gpus', default='-1', type=str)
+        # parser.add_argument('-gpu_ranks', default='0', type=str)
+        # parser.add_argument('-log_file', default='../logs/abs_bert')
+        # parser.add_argument('-seed', default=666, type=int)
+        #
+        # parser.add_argument("-test_all", type=str2bool, nargs='?', const=True, default=True)
+        # parser.add_argument("-test_from", default='../models/model_step_154000.pt')
+        # parser.add_argument("-test_start_from", default=-1, type=int)
+        #
+        # parser.add_argument("-train_from", default='')
+        # parser.add_argument("-report_rouge", type=str2bool, nargs='?', const=True, default=True)
+        # parser.add_argument("-block_trigram", type=str2bool, nargs='?', const=True, default=True)
 
-        parser.add_argument("-batch_size", default=140, type=int)
-        parser.add_argument("-test_batch_size", default=200, type=int)
-        parser.add_argument("-max_ndocs_in_batch", default=6, type=int)
+        # самые важные аргументы для суммаризации:
+        args = {'task': 'abs',
+                'mode': 'test_text',
+                'model_path': '../models/-gpt',
+                'result_path': '../results/cnndm',
+                'text_src': '../raw_data/raw_text.txt',
+                'device': 'cpu', # cuda
+                'test_from': '../models/model_step_154000.pt',
+                'visible_gpus': '-1',
+                'gpu_ranks': '0',
+                'log_file': '../logs/abs_bert',
+                'top_k': 0,
+                'top_p': 0.9,
+                }
 
-        parser.add_argument("-max_pos", default=512, type=int)
-        parser.add_argument("-use_interval", type=str2bool, nargs='?', const=True, default=True)
-        parser.add_argument("-large", type=str2bool, nargs='?', const=True, default=False)
-        parser.add_argument("-load_from_extractive", default='', type=str)
-
-        parser.add_argument("-sep_optim", type=str2bool, nargs='?', const=True, default=False)
-        parser.add_argument("-lr_bert", default=2e-3, type=float)
-        parser.add_argument("-lr_dec", default=2e-3, type=float)
-        parser.add_argument("-use_bert_emb", type=str2bool, nargs='?', const=True, default=False)
-
-        parser.add_argument("-share_emb", type=str2bool, nargs='?', const=True, default=False)
-        parser.add_argument("-finetune_bert", type=str2bool, nargs='?', const=True, default=True)
-        parser.add_argument("-dec_dropout", default=0.2, type=float)
-        parser.add_argument("-dec_layers", default=6, type=int)
-        parser.add_argument("-dec_hidden_size", default=768, type=int)
-        parser.add_argument("-dec_heads", default=8, type=int)
-        parser.add_argument("-dec_ff_size", default=2048, type=int)
-        parser.add_argument("-enc_hidden_size", default=512, type=int)
-        parser.add_argument("-enc_ff_size", default=512, type=int)
-        parser.add_argument("-enc_dropout", default=0.2, type=float)
-        parser.add_argument("-enc_layers", default=6, type=int)
-
-        # params for EXT
-        parser.add_argument("-ext_dropout", default=0.1, type=float)
-        parser.add_argument("-ext_layers", default=2, type=int)
-        parser.add_argument("-ext_hidden_size", default=768, type=int)
-        parser.add_argument("-ext_heads", default=8, type=int)
-        parser.add_argument("-ext_ff_size", default=2048, type=int)
-
-        parser.add_argument("-label_smoothing", default=0.1, type=float)
-        parser.add_argument("-generator_shard_size", default=32, type=int)
-        parser.add_argument("-alpha", default=0.6, type=float)
-        parser.add_argument("-beam_size", default=5, type=int)
-        parser.add_argument("-min_length", default=40, type=int)
-        parser.add_argument("-max_length", default=200, type=int)
-        parser.add_argument("-max_tgt_len", default=140, type=int)
-
-        parser.add_argument("-param_init", default=0, type=float)
-        parser.add_argument("-param_init_glorot", type=str2bool, nargs='?', const=True, default=True)
-        parser.add_argument("-optim", default='adam', type=str)
-        parser.add_argument("-lr", default=1, type=float)
-        parser.add_argument("-beta1", default=0.9, type=float)
-        parser.add_argument("-beta2", default=0.999, type=float)
-        parser.add_argument("-warmup_steps", default=8000, type=int)
-        parser.add_argument("-warmup_steps_bert", default=8000, type=int)
-        parser.add_argument("-warmup_steps_dec", default=8000, type=int)
-        parser.add_argument("-max_grad_norm", default=0, type=float)
-
-        parser.add_argument("-save_checkpoint_steps", default=5, type=int)
-        parser.add_argument("-accum_count", default=1, type=int)
-        parser.add_argument("-report_every", default=1, type=int)
-        parser.add_argument("-train_steps", default=1000, type=int)
-        parser.add_argument("-recall_eval", type=str2bool, nargs='?', const=True, default=False)
-
-        parser.add_argument('-visible_gpus', default='-1', type=str)
-        parser.add_argument('-gpu_ranks', default='0', type=str)
-        parser.add_argument('-log_file', default='../logs/abs_bert')
-        parser.add_argument('-seed', default=666, type=int)
-
-        parser.add_argument("-test_all", type=str2bool, nargs='?', const=True, default=True)
-        parser.add_argument("-test_from", default='../models/model_step_154000.pt')
-        parser.add_argument("-test_start_from", default=-1, type=int)
-
-        parser.add_argument("-train_from", default='')
-        parser.add_argument("-report_rouge", type=str2bool, nargs='?', const=True, default=True)
-        parser.add_argument("-block_trigram", type=str2bool, nargs='?', const=True, default=True)
-
-        args = parser.parse_args()
+        args = Map(args)
+        # Внимание, закомментил args = parser.parse_args() тк выдает ошибку при запуске с gunicorn https://github.com/benoitc/gunicorn/issues/1867
+        #args = parser.parse_args()
         args.gpu_ranks = [int(i) for i in range(len(args.visible_gpus.split(',')))]
         args.world_size = len(args.gpu_ranks)
         os.environ["CUDA_VISIBLE_DEVICES"] = args.visible_gpus
@@ -689,89 +711,106 @@ def get_summary():
         # некоторые аргс изменены в соответствии с парамтерами запуска на инференс:
         # python train.py -task abs -mode test_text -text_src '../raw_data/naked_photos_petapixel.txt' -bert_data_path '../bert_data/' -ext_dropout 0.1 -model_path '../models/' -test_from '../models/model_step_154000.pt' -lr 2e-3 -visible_gpus -1 -report_every 50 -save_checkpoint_steps 1000 -batch_size 140 -train_steps 50000 -accum_count 2 -log_file ../logs/abs_bert -use_interval true -warmup_steps 10000 -max_pos 512 -max_length 200 -alpha 0.95 -min_length 50 -result_path '../results/cnndm' -test_all True
         #############
-        parser = argparse.ArgumentParser()
-        parser.add_argument("-task", default='abs', type=str, choices=['ext', 'abs'])
-        parser.add_argument("-encoder", default='bert', type=str, choices=['bert', 'baseline'])
-        parser.add_argument("-mode", default='test_text', type=str, choices=['train', 'validate', 'test', 'test_text'])
-        parser.add_argument("-bert_data_path", default='../bert_data/')
-        parser.add_argument("-model_path", default='../models/')
-        parser.add_argument("-result_path", default='../results/cnndm')
-        parser.add_argument("-temp_dir", default='../temp')
-        parser.add_argument("-text_src", default='../raw_data/raw_text.txt')
-        parser.add_argument("-text_tgt", default='')
+        # parser = argparse.ArgumentParser()
+        # parser.add_argument("-task", default='abs', type=str, choices=['ext', 'abs'])
+        # parser.add_argument("-encoder", default='bert', type=str, choices=['bert', 'baseline'])
+        # parser.add_argument("-mode", default='test_text', type=str, choices=['train', 'validate', 'test', 'test_text'])
+        # parser.add_argument("-bert_data_path", default='../bert_data/')
+        # parser.add_argument("-model_path", default='../models/')
+        # parser.add_argument("-result_path", default='../results/cnndm')
+        # parser.add_argument("-temp_dir", default='../temp')
+        # parser.add_argument("-text_src", default='../raw_data/raw_text.txt')
+        # parser.add_argument("-text_tgt", default='')
+        #
+        # parser.add_argument("-batch_size", default=140, type=int)
+        # parser.add_argument("-test_batch_size", default=200, type=int)
+        # parser.add_argument("-max_ndocs_in_batch", default=6, type=int)
+        #
+        # parser.add_argument("-max_pos", default=512, type=int)
+        # parser.add_argument("-use_interval", type=str2bool, nargs='?', const=True, default=True)
+        # parser.add_argument("-large", type=str2bool, nargs='?', const=True, default=False)
+        # parser.add_argument("-load_from_extractive", default='', type=str)
+        #
+        # parser.add_argument("-sep_optim", type=str2bool, nargs='?', const=True, default=False)
+        # parser.add_argument("-lr_bert", default=2e-3, type=float)
+        # parser.add_argument("-lr_dec", default=2e-3, type=float)
+        # parser.add_argument("-use_bert_emb", type=str2bool, nargs='?', const=True, default=False)
+        #
+        # parser.add_argument("-share_emb", type=str2bool, nargs='?', const=True, default=False)
+        # parser.add_argument("-finetune_bert", type=str2bool, nargs='?', const=True, default=True)
+        # parser.add_argument("-dec_dropout", default=0.2, type=float)
+        # parser.add_argument("-dec_layers", default=6, type=int)
+        # parser.add_argument("-dec_hidden_size", default=768, type=int)
+        # parser.add_argument("-dec_heads", default=8, type=int)
+        # parser.add_argument("-dec_ff_size", default=2048, type=int)
+        # parser.add_argument("-enc_hidden_size", default=512, type=int)
+        # parser.add_argument("-enc_ff_size", default=512, type=int)
+        # parser.add_argument("-enc_dropout", default=0.2, type=float)
+        # parser.add_argument("-enc_layers", default=6, type=int)
+        #
+        # # params for EXT
+        # parser.add_argument("-ext_dropout", default=0.1, type=float)
+        # parser.add_argument("-ext_layers", default=2, type=int)
+        # parser.add_argument("-ext_hidden_size", default=768, type=int)
+        # parser.add_argument("-ext_heads", default=8, type=int)
+        # parser.add_argument("-ext_ff_size", default=2048, type=int)
+        #
+        # parser.add_argument("-label_smoothing", default=0.1, type=float)
+        # parser.add_argument("-generator_shard_size", default=32, type=int)
+        # parser.add_argument("-alpha", default=0.6, type=float)
+        # parser.add_argument("-beam_size", default=5, type=int)
+        # parser.add_argument("-min_length", default=40, type=int)
+        # parser.add_argument("-max_length", default=200, type=int)
+        # parser.add_argument("-max_tgt_len", default=140, type=int)
+        #
+        # parser.add_argument("-param_init", default=0, type=float)
+        # parser.add_argument("-param_init_glorot", type=str2bool, nargs='?', const=True, default=True)
+        # parser.add_argument("-optim", default='adam', type=str)
+        # parser.add_argument("-lr", default=1, type=float)
+        # parser.add_argument("-beta1", default=0.9, type=float)
+        # parser.add_argument("-beta2", default=0.999, type=float)
+        # parser.add_argument("-warmup_steps", default=8000, type=int)
+        # parser.add_argument("-warmup_steps_bert", default=8000, type=int)
+        # parser.add_argument("-warmup_steps_dec", default=8000, type=int)
+        # parser.add_argument("-max_grad_norm", default=0, type=float)
+        #
+        # parser.add_argument("-save_checkpoint_steps", default=5, type=int)
+        # parser.add_argument("-accum_count", default=1, type=int)
+        # parser.add_argument("-report_every", default=1, type=int)
+        # parser.add_argument("-train_steps", default=1000, type=int)
+        # parser.add_argument("-recall_eval", type=str2bool, nargs='?', const=True, default=False)
+        #
+        # parser.add_argument('-visible_gpus', default='-1', type=str)
+        # parser.add_argument('-gpu_ranks', default='0', type=str)
+        # parser.add_argument('-log_file', default='../logs/abs_bert')
+        # parser.add_argument('-seed', default=666, type=int)
+        #
+        # parser.add_argument("-test_all", type=str2bool, nargs='?', const=True, default=True)
+        # parser.add_argument("-test_from", default='../models/model_step_154000.pt')
+        # parser.add_argument("-test_start_from", default=-1, type=int)
+        #
+        # parser.add_argument("-train_from", default='')
+        # parser.add_argument("-report_rouge", type=str2bool, nargs='?', const=True, default=True)
+        # parser.add_argument("-block_trigram", type=str2bool, nargs='?', const=True, default=True)
 
-        parser.add_argument("-batch_size", default=140, type=int)
-        parser.add_argument("-test_batch_size", default=200, type=int)
-        parser.add_argument("-max_ndocs_in_batch", default=6, type=int)
+        # самые важные аргументы для суммаризации:
+        args = {'task': 'abs',
+                'mode': 'test_text',
+                'model_path': '../models/-gpt',
+                'result_path': '../results/cnndm',
+                'text_src': '../raw_data/raw_text.txt',
+                'device': 'cpu', # cuda
+                'test_from': '../models/model_step_154000.pt',
+                'visible_gpus': '-1',
+                'gpu_ranks': '0',
+                'log_file': '../logs/abs_bert',
+                'top_k': 0,
+                'top_p': 0.9,
+                }
 
-        parser.add_argument("-max_pos", default=512, type=int)
-        parser.add_argument("-use_interval", type=str2bool, nargs='?', const=True, default=True)
-        parser.add_argument("-large", type=str2bool, nargs='?', const=True, default=False)
-        parser.add_argument("-load_from_extractive", default='', type=str)
-
-        parser.add_argument("-sep_optim", type=str2bool, nargs='?', const=True, default=False)
-        parser.add_argument("-lr_bert", default=2e-3, type=float)
-        parser.add_argument("-lr_dec", default=2e-3, type=float)
-        parser.add_argument("-use_bert_emb", type=str2bool, nargs='?', const=True, default=False)
-
-        parser.add_argument("-share_emb", type=str2bool, nargs='?', const=True, default=False)
-        parser.add_argument("-finetune_bert", type=str2bool, nargs='?', const=True, default=True)
-        parser.add_argument("-dec_dropout", default=0.2, type=float)
-        parser.add_argument("-dec_layers", default=6, type=int)
-        parser.add_argument("-dec_hidden_size", default=768, type=int)
-        parser.add_argument("-dec_heads", default=8, type=int)
-        parser.add_argument("-dec_ff_size", default=2048, type=int)
-        parser.add_argument("-enc_hidden_size", default=512, type=int)
-        parser.add_argument("-enc_ff_size", default=512, type=int)
-        parser.add_argument("-enc_dropout", default=0.2, type=float)
-        parser.add_argument("-enc_layers", default=6, type=int)
-
-        # params for EXT
-        parser.add_argument("-ext_dropout", default=0.1, type=float)
-        parser.add_argument("-ext_layers", default=2, type=int)
-        parser.add_argument("-ext_hidden_size", default=768, type=int)
-        parser.add_argument("-ext_heads", default=8, type=int)
-        parser.add_argument("-ext_ff_size", default=2048, type=int)
-
-        parser.add_argument("-label_smoothing", default=0.1, type=float)
-        parser.add_argument("-generator_shard_size", default=32, type=int)
-        parser.add_argument("-alpha", default=0.6, type=float)
-        parser.add_argument("-beam_size", default=5, type=int)
-        parser.add_argument("-min_length", default=40, type=int)
-        parser.add_argument("-max_length", default=200, type=int)
-        parser.add_argument("-max_tgt_len", default=140, type=int)
-
-        parser.add_argument("-param_init", default=0, type=float)
-        parser.add_argument("-param_init_glorot", type=str2bool, nargs='?', const=True, default=True)
-        parser.add_argument("-optim", default='adam', type=str)
-        parser.add_argument("-lr", default=1, type=float)
-        parser.add_argument("-beta1", default=0.9, type=float)
-        parser.add_argument("-beta2", default=0.999, type=float)
-        parser.add_argument("-warmup_steps", default=8000, type=int)
-        parser.add_argument("-warmup_steps_bert", default=8000, type=int)
-        parser.add_argument("-warmup_steps_dec", default=8000, type=int)
-        parser.add_argument("-max_grad_norm", default=0, type=float)
-
-        parser.add_argument("-save_checkpoint_steps", default=5, type=int)
-        parser.add_argument("-accum_count", default=1, type=int)
-        parser.add_argument("-report_every", default=1, type=int)
-        parser.add_argument("-train_steps", default=1000, type=int)
-        parser.add_argument("-recall_eval", type=str2bool, nargs='?', const=True, default=False)
-
-        parser.add_argument('-visible_gpus', default='-1', type=str)
-        parser.add_argument('-gpu_ranks', default='0', type=str)
-        parser.add_argument('-log_file', default='../logs/abs_bert')
-        parser.add_argument('-seed', default=666, type=int)
-
-        parser.add_argument("-test_all", type=str2bool, nargs='?', const=True, default=True)
-        parser.add_argument("-test_from", default='../models/model_step_154000.pt')
-        parser.add_argument("-test_start_from", default=-1, type=int)
-
-        parser.add_argument("-train_from", default='')
-        parser.add_argument("-report_rouge", type=str2bool, nargs='?', const=True, default=True)
-        parser.add_argument("-block_trigram", type=str2bool, nargs='?', const=True, default=True)
-
-        args = parser.parse_args()
+        args = Map(args)
+        # Внимание, закомментил args = parser.parse_args() тк выдает ошибку при запуске с gunicorn https://github.com/benoitc/gunicorn/issues/1867
+        #args = parser.parse_args()
         args.gpu_ranks = [int(i) for i in range(len(args.visible_gpus.split(',')))]
         args.world_size = len(args.gpu_ranks)
         os.environ["CUDA_VISIBLE_DEVICES"] = args.visible_gpus
@@ -841,4 +880,9 @@ if __name__ == '__main__':
 
     # на моем сервере firstvds jason
     # Внимание, запускать python app.py а не FLASK_APP=app.py flask run тк запустится как локалхост и будет ошибка 111 requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionRefusedError(111, 'Connection refused'))
-    app.run(host = '0.0.0.0', port = 5000, debug = True)
+
+    # dev server
+    # app.run(host = '0.0.0.0', port = 5000, debug = True)
+
+    # gunicorn
+    app.run(host = '0.0.0.0', port = 5000, debug = True) # 0.0.0.0  213.159.215.173

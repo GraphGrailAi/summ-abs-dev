@@ -6,8 +6,10 @@ import random
 import torch
 from tqdm import tqdm
 
-from others.logging import logger
-
+try:
+    from others.logging import logger
+except:
+    from .others.logging import logger
 
 
 class Batch(object):
