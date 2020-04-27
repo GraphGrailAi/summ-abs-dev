@@ -627,7 +627,7 @@ def get_summary():
         # самые важные аргументы для суммаризации:
         args = {'task': 'abs',
                 'mode': 'test_text',
-                'model_path': '../models/-gpt',
+                'model_path': '../models/',
                 'result_path': '../results/cnndm',
                 'text_src': '../raw_data/raw_text.txt',
                 'device': 'cpu', # cuda
@@ -796,7 +796,7 @@ def get_summary():
         # самые важные аргументы для суммаризации:
         args = {'task': 'abs',
                 'mode': 'test_text',
-                'model_path': '../models/-gpt',
+                'model_path': '../models/',
                 'result_path': '../results/cnndm',
                 'text_src': '../raw_data/raw_text.txt',
                 'device': 'cpu', # cuda
