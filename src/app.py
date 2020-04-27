@@ -649,7 +649,7 @@ def get_summary():
         #         'dec_dropout': 0.2,
         #         }
         # args = Map(args)
-        
+
         args.gpu_ranks = [int(i) for i in range(len(args.visible_gpus.split(',')))]
         args.world_size = len(args.gpu_ranks)
         os.environ["CUDA_VISIBLE_DEVICES"] = args.visible_gpus
