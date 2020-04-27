@@ -39,6 +39,10 @@ app.config['SECRET_KEY'] = 'secret!'
 socketio = SocketIO(app)
 
 
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__file__)
+# logger.info(pformat(args))
+
 def str2bool(v):
     if v.lower() in ('yes', 'true', 't', 'y', '1'):
         return True
@@ -875,6 +879,9 @@ def test_message(message):
 	emit('i said ', {'data': message['data']})
 
 if __name__ == '__main__':
+    gunicorn_logger = logging.getLogger('gunicorn.error')
+    app.logger.handlers = gunicorn_logger.handlers
+    app.logger.setLevel(gunicorn_logger.level)
     # на локальном сервере работает
     #app.run(debug=True)#socketio.run(app, debug=True) #app.run()
 
