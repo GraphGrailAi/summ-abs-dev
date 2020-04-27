@@ -539,7 +539,7 @@ def get_summary():
         while not raw_text:
             print('Prompt should not be empty!')
         file1 = open("../raw_data/raw_text.txt", "w+")
-        file1.write(str(raw_text.encode('utf-8'))) # Hello \n
+        file1.write(str(raw_text.encode('utf-8').decode('latin-1'))) # Hello \n s.encode('utf-8').decode('latin-1')
         file1.close()
 
         #############
@@ -639,7 +639,7 @@ def get_summary():
                 'visible_gpus': '-1',
                 'gpu_ranks': '0',
                 'log_file': '../logs/abs_bert',
-                'top_k': 0,
+                'max_pos': 512,
                 'top_p': 0.9,
                 }
 
@@ -671,7 +671,7 @@ def get_summary():
                     step = 0
                 test_abs(args, device_id, cp, step)
             elif (args.mode == 'test_text'):
-                test_text_abs(args)  # вызываем на инференс именно test_text_abs
+                test_text_abs(args)  # inference test_text_abs ONLY
 
         elif (args.task == 'ext'):
             if (args.mode == 'train'):
@@ -708,7 +708,7 @@ def get_summary():
         while not raw_text:
             print('Prompt should not be empty!')
         file1 = open("../raw_data/raw_text.txt", "w+")
-        file1.write(str(raw_text.encode('utf-8'))) # Hello \n
+        file1.write(str(raw_text.encode('utf-8').decode('latin-1'))) # Hello \n s.encode('utf-8').decode('latin-1')
         file1.close()
 
         #############
@@ -808,7 +808,7 @@ def get_summary():
                 'visible_gpus': '-1',
                 'gpu_ranks': '0',
                 'log_file': '../logs/abs_bert',
-                'top_k': 0,
+                'max_pos': 512,
                 'top_p': 0.9,
                 }
 
@@ -840,7 +840,7 @@ def get_summary():
                     step = 0
                 test_abs(args, device_id, cp, step)
             elif (args.mode == 'test_text'):
-                test_text_abs(args)  # вызываем на инференс именно test_text_abs
+                test_text_abs(args)  # inference test_text_abs ONLY
 
         elif (args.task == 'ext'):
             if (args.mode == 'train'):
