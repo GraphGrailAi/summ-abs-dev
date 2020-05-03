@@ -49,6 +49,7 @@ python train.py -task abs -mode test_text -text_src '../raw_data/players_bln_gam
 
 python train.py -task abs -mode test_text -text_src '../raw_data/french_techcrunch.txt' -bert_data_path '../bert_data/' -ext_dropout 0.1 -model_path '../models/' -test_from '../models/model_step_154000.pt' -lr 2e-3 -visible_gpus -1 -report_every 50 -save_checkpoint_steps 1000 -batch_size 140 -train_steps 50000 -accum_count 2 -log_file ../logs/abs_bert -use_interval true -warmup_steps 10000 -max_pos 512 -max_length 200 -alpha 0.95 -min_length 20 -result_path '../results/cnndm' -test_all True
 
+python train.py -task abs -mode test_text -text_src '../raw_data/ai.txt' -bert_data_path '../bert_data/' -ext_dropout 0.1 -model_path '../models/' -test_from '../models/model_step_154000.pt' -lr 2e-3 -visible_gpus -1 -report_every 50 -save_checkpoint_steps 1000 -batch_size 140 -train_steps 50000 -accum_count 2 -log_file ../logs/abs_bert -use_interval true -warmup_steps 10000 -max_pos 512 -max_length 200 -alpha 0.95 -min_length 20 -result_path '../results/cnndm' -test_all True
 
 
 
