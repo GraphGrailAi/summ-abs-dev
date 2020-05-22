@@ -83,7 +83,7 @@ Wait about 15 sec. Paste your text in raw_text= between quotes
 
 For example:
 ```
-http://213.159.215.173:5005/get_summary?raw_text=%22%E2%80%98The%20Robot,%20The%20Dentist%20and%20The%20Pyramid%E2%80%99%20follows%20a%20group%20of%20research%20engineers%20and%20scientists,%20some%20from%20the%20University%20of%20Leeds,%20who%20accepted%20a%20challenge%20to%20build%20a%20robot%20capable%20of%20exploring%20the%20pyramid.%22
+http://35.202.164.44:5005/get_summary?raw_text=%22%E2%80%98The%20Robot,%20The%20Dentist%20and%20The%20Pyramid%E2%80%99%20follows%20a%20group%20of%20research%20engineers%20and%20scientists,%20some%20from%20the%20University%20of%20Leeds,%20who%20accepted%20a%20challenge%20to%20build%20a%20robot%20capable%20of%20exploring%20the%20pyramid.%22
 ```
 
 You will get a result in JSON format:
