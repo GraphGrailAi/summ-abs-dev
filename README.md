@@ -1,7 +1,106 @@
 # Summ abstractive and extractive
 
-**This code is for EMNLP 2019 paper [Text Summarization with Pretrained Encoders](https://arxiv.org/abs/1908.08345)**
+## Install instructions
 
+Insatall on your Ubuntu server and serve API with gunicorn:
+
+####  Step 1. Clone repo
+```
+git clone https://github.com/GraphGrailAi/summ-abs-dev.git
+```
+####  Step 2. Install Anaconda 5.2.0
+Skip step if you have it already
+```
+wget https://repo.anaconda.com/archive/Anaconda3-5.2.0-Linux-x86_64.sh
+bash Anaconda3-5.2.0-Linux-x86_64.sh
+```
+####  Step 3. Get punkt tokenizer for NLTK
+In your terminal launch python interactive shell and invoke:
+```
+viktor@chrono-ml:~$ python
+Python 3.6.5 |Anaconda, Inc.| (default, Apr 29 2018, 16:14:56) 
+[GCC 7.2.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import nltk
+>>> nltk.download('punkt')
+```
+####  Step 4. Download summarization model to models folder
+cd to summ-abs-dev/models/ and download from Dropbox, about 2GB space. Rename file to model_step_154000.pt (no ?dl=0)
+```
+cd summ-abs-dev/models/
+wget https://dl.dropbox.com/s/54blwnq3vnfgpzv/model_step_154000.pt?dl=0
+mv model_step_154000.pt?dl=0 model_step_154000.pt
+```
+####  Step 5. Install gunicorn
+Warning: be careful you install it for Anaconda python. Allow port for inerence: 5005
+```
+pip install gunicorn
+sudo ufw allow 5005
+```
+####  Step 6. Configure supervisor to run summ service as daemon.
+You can test service without supervisor directly from terminal:
+```
+gunicorn --log-level debug --workers 1 --timeout 730 --pythonpath /home/viktor/anaconda3/bin --access-logfile=access.log --error-logfile=error.log --capture-output --bind 0.0.0.0:5005 wsgi:app
+```
+But better to use supervisor:
+
+Warning: be careful you install it for Anaconda python. Allow port for inference: 5005
+```
+cd /etc/supervisor/conf.d
+sudo wget https://raw.githubusercontent.com/GraphGrailAi/summ-abs-dev/master/supervisor/supervisord_ze.conf
+sudo supervisorctl reread
+sudo supervisorctl update
+sudo /etc/init.d/supervisor restart
+```
+supervisor config is the following:
+```
+[program:summgunguy]
+directory=/home/viktor/summ-abs-dev/src/
+user=viktor
+command=/usr/bin/gunicorn3 --log-level debug --workers 1 --timeout 1030 --bind 0.0.0.0:5005 wsgi:app
+PYTHONPATH='/home/viktor/anaconda3/bin'
+autostart=true
+autorestart=true
+stopwaitsecs=1
+startsecs=5
+priority=99
+stderr_logfile=/var/log/test_summgunguy.err.log
+stdout_logfile=/var/log/test_summgunguy.out.log
+```
+
+Now go to supervisorctl and start service:
+```
+sudo supervisorctl
+summgunguy start
+```
+####  Step 7. Inference: send your text to service and get summarization back
+In you browser navigate to following link with API. 
+```
+http://35.202.164.44:5005/get_summary?raw_text=”Ai text to rewrite”
+
+```
+Wait about 15 sec. Paste your text in raw_text= between quotes
+
+For example:
+```
+http://213.159.215.173:5005/get_summary?raw_text=%22%E2%80%98The%20Robot,%20The%20Dentist%20and%20The%20Pyramid%E2%80%99%20follows%20a%20group%20of%20research%20engineers%20and%20scientists,%20some%20from%20the%20University%20of%20Leeds,%20who%20accepted%20a%20challenge%20to%20build%20a%20robot%20capable%20of%20exploring%20the%20pyramid.%22
+```
+
+You will get a result in JSON format:
+```
+{
+  "text_full": "\"\u2018The Robot, The Dentist and The Pyramid\u2019 follows a group of research engineers and scientists, some from the University of Leeds, who accepted a challenge to build a robot capable of exploring the pyramid.\"", 
+  "text_summary": "A group of research engineers and scientists from the university of leeds accepted a challenge to build a robot capable of exploring the pyramid. The dentist and the pyramid are two of the most successful robotic vehicles in the world"
+}
+```
+Get your result in text_summary field.
+
+That's it.
+
+
+
+
+**This code is for EMNLP 2019 paper [Text Summarization with Pretrained Encoders](https://arxiv.org/abs/1908.08345)**
 Results on CNN/DailyMail (20/8/2019):
 
 
